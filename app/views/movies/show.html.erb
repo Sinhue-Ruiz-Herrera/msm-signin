@@ -1,9 +1,22 @@
+<p style="color: green"><%= notice %></p>
+<p style="color: red"><%= alert %></p>
+
+
 <div>
   <div>
     <h1>
       Movie #<%= @the_movie.id %> details
     </h1>
+<%# Adding Bookmarks%>
 
+<form action="/add_bookmark">
+User
+<input type="hidden" name="the_user_id" value="<% session.fetch(:user_id)%>">
+Movie
+<input type="hidden" name="the_movie_id" value="<% @the_movie.id%>">
+
+<button> Bookmark this movie!</button>
+</form>
     <div>
       <div>
         <a href="/movies">
